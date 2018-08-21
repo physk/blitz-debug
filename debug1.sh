@@ -11,7 +11,7 @@ echo "---- Bad Keys (Manual) ----"
 ls -la /opt/appdata/pgblitz/keys/badjson/ | awk '{print $9}' | egrep '(PG|GD|GS)'
 echo "Found `ls -la /opt/appdata/pgblitz/keys/badjson/ | awk '{print $9}' | egrep '(PG|GD|GS)' | wc -l` Keys under badjson"
 echo "---- Folders ----"
-echo "Found `find /mnt/pgblitz -type d -mindepth 1 | wc -l` folders Under /mnt/pgblitz"
+echo "Found `find /mnt/pgblitz -maxdepth 1 -type d | wc -l` folders Under /mnt/pgblitz of which `find /mnt/pgblitz -maxdepth 1 -type d -empty | wc -l` are empty"
 echo "---- Files ----"
 echo "Found `find /mnt/move -type f | wc -l` files Under /mnt/move"
 echo "Found `find /mnt/pgblitz -type f | wc -l` files Under /mnt/pgblitz"
