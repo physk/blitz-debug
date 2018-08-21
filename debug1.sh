@@ -1,3 +1,8 @@
+echo "---- Vars ----"
+ls -la /opt/appdata/pgblitz/vars | awk '{print $9}'
+if [ -e /opt/appdata/pgblitz/vars/automated ]; then
+    echo "Running in Automated mode"
+fi
 echo "---- Automated Keys ----"
 ls -la /opt/appdata/pgblitz/keys/automation/ | awk '{print $9}' | egrep '(PG|GD|GS)'
 echo "Found `ls -la /opt/appdata/pgblitz/keys/automation/ | awk '{print $9}' | egrep '(PG|GD|GS)' | wc -l` Keys under automation"
