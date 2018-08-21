@@ -14,4 +14,4 @@ echo "---- Files ----"
 echo "Found `find /mnt/move -type f | wc -l` files Under /mnt/move"
 echo "Found `find /mnt/pgblitz -type f | wc -l` files Under /mnt/pgblitz"
 echo "---- Journalctl ----"
-sudo cat /opt/appdata/plexguide/pg.log | grep PGBlitz | tail -100
+cat /opt/appdata/plexguide/pg.log | grep PGBlitz | tail -100
