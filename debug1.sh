@@ -6,7 +6,7 @@ fi
 echo "---- lastGDSA ----"
 cat /opt/appdata/pgblitz/vars/lastGDSA
 echo "---- gdsaAmount ----"
-cat /opt/appdata/pgblitz/vars/ gdsaAmount
+cat /opt/appdata/pgblitz/vars/gdsaAmount
 echo "---- Software ----"
 if [ `echo "10 + 10" | bc` == "20" ]; then
     echo "BC installed";
