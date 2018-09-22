@@ -35,16 +35,16 @@ echo "Found `find /mnt/move -type f -iname '*.lck' | wc -l ` lock files in /mnt/
 if [ -e /opt/appdata/pgblitz/keys/automation/rclone.conf ]; then
     echo "It looks like the rclone config move failed"
 fi
-#echo "---- MD5 ----"
-#if [ `cat /opt/appdata/pgblitz/pgblitz.sh | md5sum | awk '{print $1}'` == "7688841d687f163fffbfee64ce86c3ac" ]; then
-#    echo "pgblitz.sh Does not seem to have been modified"
-#else
-#    echo "pgblitz.sh Seems to have been modified - No Support"
-#fi
-#if [ `cat /opt/appdata/pgblitz/upload.sh | md5sum | awk '{print $1}'` == "305aecdd8a2cc908f97c54143b24a22e" ]; then
-#    echo "upload.sh Does not seem to have been modified"
-#else
-#    echo "upload.sh Seems to have been modified - No Support"
-#fi
+echo "---- MD5 ----"
+if [ `cat /opt/appdata/pgblitz/pgblitz.sh | md5sum | awk '{print $1}'` == "f9bda9322ff875e64cf8b1465fda09a2" ]; then
+    echo "pgblitz.sh Does not seem to have been modified"
+else
+    echo "pgblitz.sh Seems to have been modified - No Support"
+fi
+if [ `cat /opt/appdata/pgblitz/upload.sh | md5sum | awk '{print $1}'` == "4965a65c22abb4d2da7ca31dabfeb2ed" ]; then
+    echo "upload.sh Does not seem to have been modified"
+else
+    echo "upload.sh Seems to have been modified - No Support"
+fi
 echo "---- Journalctl ----"
 cat /opt/appdata/plexguide/pg.log | grep PGBlitz | tail -100
